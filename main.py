@@ -131,9 +131,9 @@ if st.button("Спрогнозировать удовлетворённость"
     st.subheader("Результат")
 
     if label == 1:
-        st.success(f"Пассажир, скорее всего, будет УДОВЛЕТВОРЁН \nВероятность: {proba:.2%}")
+        st.success(f"Пассажир, скорее всего, будет УДОВЛЕТВОРЁН. \nВероятность: {proba:.2%}")
     else:
-        st.error(f"Пассажир может быть НЕУДОВЛЕТВОРЁН \nВероятность удовлетворённости: {proba:.2%}")
+        st.error(f"Пассажир может быть НЕУДОВЛЕТВОРЁН. \nВероятность удовлетворённости: {proba:.2%}")
 
 importance_cols = [
     'Wi-Fi на борту',
@@ -180,11 +180,11 @@ def analyze_single_category(row: pd.Series):
 
     st.subheader("Топ-3 наиболее важных факторов")
     for feat, val in top3.items():
-        st.write(f"**{feat}:**")
+        st.write(f"**{feat}**")
 
     st.subheader("Топ-3 наименее важных факторов")
     for feat, val in bottom3.items():
-        st.write(f"**{feat}:**")
+        st.write(f"**{feat}**")
 
 
 def analyze_multiple_categories(subset: pd.DataFrame):
@@ -300,4 +300,5 @@ def generate_report_streamlit(results_df: pd.DataFrame):
             analyze_multiple_categories(subset)
 
 generate_report_streamlit(results_df)
+
 
