@@ -94,7 +94,7 @@ age = st.number_input("Возраст", min_value=1, max_value=100, value=30)
 flight_distance = st.number_input("Дальность перелёта (км)", min_value=1, max_value=10000, value=1000)
 arrival_delay = st.number_input("Задержка прибытия (мин.)", min_value=0, max_value=300, value=0)
 
-st.header("Оценки качества сервиса (1 = очень плохо, 5 = отлично)")
+st.header("Оценки качества сервиса (0 = отсутствует, 1 = очень плохо, 5 = отлично)")
 
 inflight_wifi = st.slider("Wi-Fi на борту", 0, 5, 1)
 ease_booking = st.slider("Удобство онлайн-бронирования", 0, 5, 1)
@@ -300,6 +300,7 @@ def generate_report_streamlit(results_df: pd.DataFrame):
             analyze_multiple_categories(subset)
 
 generate_report_streamlit(results_df)
+
 
 
 
