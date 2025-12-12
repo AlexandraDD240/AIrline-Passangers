@@ -96,16 +96,16 @@ arrival_delay = st.number_input("Задержка прибытия (мин.)", m
 
 st.header("Оценки качества сервиса (1 = очень плохо, 5 = отлично)")
 
-inflight_wifi = st.slider("Wi-Fi на борту", 1, 5, 1)
-ease_booking = st.slider("Удобство онлайн-бронирования", 1, 5, 1)
-food_drink = st.slider("Еда и напитки", 1, 5, 1)
-online_boarding = st.slider("Онлайн-посадка", 1, 5, 1)
-inflight_ent = st.slider("Развлечения на борту", 1, 5, 1)
-onboard_service = st.slider("Обслуживание на борту", 1, 5, 1)
-leg_room = st.slider("Место для ног", 1, 5, 1)
-checkin_service = st.slider("Регистрация на рейс", 1, 5, 1)
-inflight_service = st.slider("Услуги на борту", 1, 5, 1)
-cleanliness = st.slider("Чистота", 1, 5, 1)
+inflight_wifi = st.slider("Wi-Fi на борту", 0, 5, 1)
+ease_booking = st.slider("Удобство онлайн-бронирования", 0, 5, 1)
+food_drink = st.slider("Еда и напитки", 0, 5, 1)
+online_boarding = st.slider("Онлайн-посадка", 0, 5, 1)
+inflight_ent = st.slider("Развлечения на борту", 0, 5, 1)
+onboard_service = st.slider("Обслуживание на борту", 0, 5, 1)
+leg_room = st.slider("Место для ног", 0, 5, 1)
+checkin_service = st.slider("Регистрация на рейс", 0, 5, 1)
+inflight_service = st.slider("Услуги на борту", 0, 5, 1)
+cleanliness = st.slider("Чистота", 0, 5, 1)
 
 if st.button("Спрогнозировать удовлетворённость"):
     label, proba = predict_satisfaction(
@@ -300,5 +300,6 @@ def generate_report_streamlit(results_df: pd.DataFrame):
             analyze_multiple_categories(subset)
 
 generate_report_streamlit(results_df)
+
 
 
