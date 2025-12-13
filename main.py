@@ -91,7 +91,7 @@ travel_type = st.selectbox("Тип путешествия", ["Личное пу�
 ticket_class = st.selectbox("Класс обслуживания", ["Эконом", "Эконом Плюс", "Бизнес"])
 
 age = st.number_input("Возраст", min_value=1, max_value=100, value=30)
-flight_distance = st.number_input("Дальность перелёта (км)", min_value=1, max_value=10000, value=1000)
+flight_distance = st.number_input("Дальность перелёта (тыс. км)", min_value=1, max_value=10000, value=1000)
 arrival_delay = st.number_input("Задержка прибытия (мин.)", min_value=0, max_value=300, value=0)
 
 st.header("Оценки качества сервиса (0 = отсутствует, 1 = очень плохо, 5 = отлично)")
@@ -300,6 +300,7 @@ def generate_report_streamlit(results_df: pd.DataFrame):
             analyze_multiple_categories(subset)
 
 generate_report_streamlit(results_df)
+
 
 
 
